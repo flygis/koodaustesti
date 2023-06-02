@@ -1,0 +1,21 @@
+/*created the missing css class definitions*/
+.table-component {
+  padding-top: 5px;
+  /*
+  added the padding that was added as a custom style,
+  since it would have been applied to the element anyway
+  */
+}
+
+.table-component-toggle-content {
+/*This class is not defined to add any styles, but the toggle class would be defined here*/
+}
+
+.table-component-content {
+  /*Decided*/
+  display: block;
+}
+
+.hide-table-component {
+  display: hidden;
+}

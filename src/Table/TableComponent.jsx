@@ -49,7 +49,7 @@ function TableItem(props) {
         setExtraContent('Latitude: ' + data.latitude);//extraContent is set using a state hook setter instead of just directly assigning the value.
       });
     });
-  }, [extraContent]);
+  }, [extraContent]);//Without assigning the value just once the code would create an infinite loopt that would prevent rendering
 
   if (!content) {
     setOpen(false);

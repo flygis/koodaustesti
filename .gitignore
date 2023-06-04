@@ -1,0 +1,14 @@
+logs/*
+!.gitkeep
+node_modules/
+tmp
+.DS_Store
+.idea
+build/
+.env
+stats.json
+coverage/
+npm-debug.log
+yarn-error.log
+/nbproject/private/
+error_report.json

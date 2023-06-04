@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 const TableComponent = (props) => {
   const { items, title } = props;
@@ -36,7 +36,7 @@ const tableHeader = ({ title }) => {
 function TableItem(props) {
   const { content, href } = props;
   const [open, setOpen] = useState(true);
-  let extraContent = "";
+  let extraContent = '';
 
   if (!content) {
     setOpen(false)
@@ -60,8 +60,8 @@ function TableItem(props) {
           onClick={(e) => setOpen(!open)}
         >Toggle content</button>
         <span
-          style={{ display: open ? "block" : "hidden" }}
           className="table-component-content"
+          style={{ display: open ? 'block' : 'hidden' }}
         >
           {content}
         </span>

@@ -21,9 +21,9 @@
   "author": "Mirko Flyktman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flygis/kiakkouutiset/issues"
+    "url": "https://github.com/flygis/koodaustesti/issues"
   },
-  "homepage": "https://github.com/flygis/kiakkouutiset#readme",
+  "homepage": "https://github.com/flygis/koodaustesti#readme",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

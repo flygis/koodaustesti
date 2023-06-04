@@ -7,8 +7,8 @@ const TableComponent = props =>
     <tbody>{/**Added tbody element since tr shouldn't be a child of just a table. */}
       {//Optimized the mapping of the props and added a mandatory key attribute for the map function
         props.items.map((i, index) =>
-          <tr key={index}>
-            <TableItem content={i.content} href={i.href} />{/*TableItem excepts content and href as props, so changed the props to match that*/}
+          <tr key={index}>{/*array index is not the best index to be used, but some unique value must be added.*/}
+            <TableItem content={i.content} href={i.href} />{/*TableItem expects content and href as props, so changed the props to match that*/}
           </tr>
         )
       }
@@ -46,7 +46,7 @@ function TableItem(props) {
     //useEffect hook should be used to assign the response to a state hooked variable, and run only once (using the second param for the function)
     fetch(href).then(response => {
       response.json().then((data) => {
-        setExtraContent('Latitude: ' + data.latitude);
+        setExtraContent('Latitude: ' + data.latitude);//extraContent is set using a state hook setter instead of just directly assigning the value.
       });
     });
   }, [extraContent]);
@@ -59,15 +59,16 @@ function TableItem(props) {
     return null;
   }
 
-  function handleOpenState(state) {
+  function handleOpenState(state) {//Added a handler to the button onClick event trigger to change open state.
+    //The state determines if the span with content coming as a prop from TableComponent is shown or not.
     setOpen(state);
   }
 
-  return (
+  return (//Removed the extra wrapping element since <td> is enough. Also refactored the elements to be more readable. 
     <td>
       <button
         className='table-component-toggle-content'
-        onClick={() => handleOpenState(!open)}>
+        onClick={(/*Removed the extra event parameter since it was not used.*/) => handleOpenState(!open)}>
         Toggle content
       </button>
       <span
